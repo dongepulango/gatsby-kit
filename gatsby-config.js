@@ -4,6 +4,7 @@ module.exports = {
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
+  pathPrefix: "/gatsby-kit",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -52,7 +53,7 @@ module.exports = {
       options: {
         access_token: '603195765c835ff8e4aa55bc7033b3902411fcfb848837d18743cb93e4c8f848'
       }
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -15,8 +15,8 @@ import Heading from '../components/heading';
 //styled
 const BlogWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f50};
-  padding-bottom: ${vars.rems.f50};
+  padding-top: ${vars.rems.f100};
+  padding-bottom: ${vars.rems.f100};
   ul {
     list-style: none;
     padding: 0;

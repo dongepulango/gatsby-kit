@@ -15,12 +15,24 @@ import Heading from '../components/heading';
 //styled
 const PostWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f50};
-  padding-bottom: ${vars.rems.f50};
+  padding-top: ${vars.rems.f100};
+  padding-bottom: ${vars.rems.f100};
 `;
 
 const PostHTML = styled.div`
   position: relative;
+  p {
+    font-size: ${vars.rems.f18};
+    line-height: 2;
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 40px;
+    }
+  }
 `;
 
 const Post = (props) => {
@@ -29,7 +41,7 @@ const Post = (props) => {
       <SEO title="Post" />
       <PageTransition>
         <PostWrap>
-          <Container>
+          <Container maxWidth="800px">
             <Heading heading1>{props.data.markdownRemark.frontmatter.title}</Heading>
             <PostHTML dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}} />
           </Container>

@@ -74,6 +74,12 @@ const Home = () => {
             published
           }
         }
+      },
+      dribleUser {
+        id
+        name
+        username
+        url
       }
     }
   `);
@@ -84,7 +90,7 @@ const Home = () => {
       <PageTransition>
         <HomeWrap>
           <Container>
-            <Heading heading1>Home</Heading>
+            <Heading heading1>Dribbble shot's from <a href={data.dribleUser.url} target="_blank" rel="noopener noreferrer">{`@${data.dribleUser.username}`}</a></Heading>
             <DribbbleShots>
               {data.allDribleProjects.edges.map(item => (
                 <li key={item.node.id}>

@@ -1,0 +1,12 @@
+---
+id: 1
+title: "Post Title 1"
+slug: '/post-1'
+date: '2019-07-25'
+---
+
+# Heading1 Post 1
+
+1Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam ipsa magni ex, ducimus a autem iure illo molestias voluptatibus dolorem pariatur, voluptates distinctio. Cumque odit ipsam, debitis minima rem adipisci aspernatur perspiciatis quaerat labore eius eum doloribus blanditiis dolorum, ut voluptatibus cum enim numquam, fuga facilis maiores! Culpa, eligendi id.
+
+## Heading2 Post 1

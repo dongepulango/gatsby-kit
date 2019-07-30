@@ -11,6 +11,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
+import Archive from '../components/archive';
 //grid
 import { Row, Col } from 'styled-bootstrap-grid';
 
@@ -19,43 +20,44 @@ const BlogWrap = styled.section`
   position: relative;
   padding-top: ${vars.rems.f100};
   padding-bottom: ${vars.rems.f100};
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-      padding-bottom: 50px;
-      margin-bottom: 50px;
-      border-bottom: 4px solid #fafafa;
-      h2 {
-        margin-bottom: 10px;
-        font-weight: bold;
-        > a {
-          color: ${vars.colors.textDark};
-          &:hover,
-          &:focus,
-          &:active {
-            color: rebeccapurple;
-          }
-        }
-        span {
-          display: block;
-          color: ${vars.colors.textLight};
-          font-weight: normal;
-          font-size: ${vars.rems.f16};
-          line-height: 2;
-        }
-      }
-      p {
-        font-size: ${vars.rems.f18};
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
+`;
+
+const BlogList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 4px solid #fafafa;
+    h2 {
+      margin-bottom: 10px;
+      font-weight: bold;
       > a {
-        display: inline-block;
-        margin-top: 20px;
-        color: rebeccapurple;
-        border-bottom: 1px solid rebeccapurple;
+        color: ${vars.colors.textDark};
+        &:hover,
+        &:focus,
+        &:active {
+          color: rebeccapurple;
+        }
       }
+      span {
+        display: block;
+        color: ${vars.colors.textLight};
+        font-weight: normal;
+        font-size: ${vars.rems.f16};
+        line-height: 2;
+      }
+    }
+    p {
+      font-size: ${vars.rems.f18};
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    > a {
+      display: inline-block;
+      margin-top: 20px;
+      color: rebeccapurple;
+      border-bottom: 1px solid rebeccapurple;
     }
   }
 `;
@@ -68,10 +70,6 @@ const Blog = () => {
       allMarkdownRemark(limit: 3, sort: {order: ASC, fields: frontmatter___date}) {
         edges {
           node {
-            headings {
-              value
-              depth
-            }
             id
             frontmatter {
               title
@@ -85,8 +83,6 @@ const Blog = () => {
     }
   `);
 
-  //console.log(data.allMarkdownRemark.edges);
-
   return (
     <Layout>
       <SEO title="Blog" />
@@ -95,7 +91,7 @@ const Blog = () => {
           <Container>
             <Row>
               <Col md={8}>
-                <ul>
+                <BlogList>
                   {data.allMarkdownRemark.edges.map((item) => (
                     <li key={item.node.id}>
                       <Heading heading1 as={'h2'}>
@@ -106,11 +102,10 @@ const Blog = () => {
                       <Link to={`${item.node.frontmatter.slug}`}>Read More</Link>
                     </li>
                   ))}
-                </ul>
+                </BlogList>
               </Col>
               <Col md={4}>
-                <Heading heading2 as={'h3'}>Blog Posts</Heading>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam ipsa magni ex, ducimus a autem iure illo molestias voluptatibus dolorem pariatur, voluptates distinctio. Cumque odit ipsam, debitis minima rem adipisci aspernatur perspiciatis quaerat labore eius eum doloribus blanditiis dolorum, ut voluptatibus cum enim numquam, fuga facilis maiores! Culpa, eligendi id.</p>
+                <Archive />
               </Col>
             </Row>
           </Container>

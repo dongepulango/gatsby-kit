@@ -11,6 +11,9 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
+import Archive from '../components/archive';
+//grid
+import { Row, Col } from 'styled-bootstrap-grid';
 
 //styled
 const PostWrap = styled.section`
@@ -18,9 +21,8 @@ const PostWrap = styled.section`
   padding-top: ${vars.rems.f100};
   padding-bottom: ${vars.rems.f100};
   ${Heading} {
-    font-weight: 900;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 40px;
+    font-weight: bold;
   }
 `;
 
@@ -33,7 +35,6 @@ const PostHTML = styled.div`
   h5,
   h6 {
     font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   p {
     font-size: ${vars.rems.f18};
@@ -56,9 +57,16 @@ const Post = (props) => {
       <SEO title="Post" />
       <PageTransition>
         <PostWrap>
-          <Container maxWidth="800px">
-            <Heading heading1>{props.data.markdownRemark.frontmatter.title}</Heading>
-            <PostHTML dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}} />
+          <Container>
+            <Row>
+              <Col md={8}>
+                <Heading heading1>{props.data.markdownRemark.frontmatter.title}</Heading>
+                <PostHTML dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
+              </Col>
+              <Col md={4}>
+                <Archive />
+              </Col>
+            </Row>
           </Container>
         </PostWrap>
       </PageTransition>

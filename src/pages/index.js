@@ -1,6 +1,7 @@
 import React from 'react';
 //gatsby
 import { useStaticQuery, graphql } from 'gatsby';
+
 //styles
 import styled from 'styled-components';
 import vars from '../components/varss';
@@ -11,6 +12,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
+import Image from '../components/image';
 
 //styled
 const HomeWrap = styled.section`
@@ -19,67 +21,26 @@ const HomeWrap = styled.section`
   padding-bottom: ${vars.rems.f100};
 `;
 
-const DribbbleShots = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-top: ${vars.rems.f50};
-  padding-bottom: ${vars.rems.f50};
-  @media (min-width: ${vars.media.mdMin}) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-  li {
-    margin-bottom: 40px;
-    @media (min-width: ${vars.media.mdMin}) {
-      min-width: 50%;
-      width: 50%;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    > a {
-      display: block;
-    }
-    h2 {
-      font-size: ${vars.rems.f18};
-      margin-bottom: 10px;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-`;
-
 const Home = () => {
 
   //graphql query
   const data = useStaticQuery(graphql`
     query {
-      allDribleProjects {
-        edges {
-          node {
-            id
-            height
-            description
-            cover
-            shotID
-            tags
-            title
-            url
-            width
-            published
+      Image1: file(relativePath: {eq: "gatsby-astronaut.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+            presentationWidth
           }
         }
-      },
-      dribleUser {
-        id
-        name
-        username
-        url
+      }
+      Image2: file(relativePath: {eq: "gatsby-icon.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 100) {
+            ...GatsbyImageSharpFluid
+            presentationWidth
+          }
+        }
       }
     }
   `);
@@ -90,17 +51,9 @@ const Home = () => {
       <PageTransition>
         <HomeWrap>
           <Container>
-            <Heading heading1>Dribbble shot's from <a href={data.dribleUser.url} target="_blank" rel="noopener noreferrer">{`@${data.dribleUser.username}`}</a></Heading>
-            <DribbbleShots>
-              {data.allDribleProjects.edges.map(item => (
-                <li key={item.node.id}>
-                  <a href={item.node.url} target="_blank" rel="noopener noreferrer">
-                    <h2>{item.node.title}</h2>
-                    <img src={item.node.cover} alt={item.node.title} />
-                  </a>
-                </li>
-              ))}
-            </DribbbleShots>
+            <Heading heading1>Welcome</Heading>
+            <Image fluid={data.Image2.childImageSharp.fluid} center />
+            <Image fluid={data.Image1.childImageSharp.fluid} center />
           </Container>
         </HomeWrap>
       </PageTransition>

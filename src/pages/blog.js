@@ -11,6 +11,8 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 import Container from '../components/container';
 import Heading from '../components/heading';
+//grid
+import { Row, Col } from 'styled-bootstrap-grid';
 
 //styled
 const BlogWrap = styled.section`
@@ -22,21 +24,37 @@ const BlogWrap = styled.section`
     padding: 0;
     margin: 0;
     li {
-      margin-bottom: 30px;
-      > a {
-        color: ${vars.colors.text};
-        &:hover {
-          color: ${vars.colors.blue};
-        }
-      }
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      border-bottom: 4px solid #fafafa;
       h2 {
-        font-size: ${vars.rems.f18};
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        > a {
+          color: ${vars.colors.textDark};
+          &:hover,
+          &:focus,
+          &:active {
+            color: rebeccapurple;
+          }
+        }
         span {
+          display: block;
           color: ${vars.colors.textLight};
           font-weight: normal;
-          font-size: ${vars.rems.f14};
+          font-size: ${vars.rems.f16};
+          line-height: 2;
         }
+      }
+      p {
+        font-size: ${vars.rems.f18};
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      > a {
+        display: inline-block;
+        margin-top: 20px;
+        color: rebeccapurple;
+        border-bottom: 1px solid rebeccapurple;
       }
     }
   }
@@ -58,7 +76,7 @@ const Blog = () => {
             frontmatter {
               title
               slug
-              date
+              date(formatString: "MMMM DD, YYYY")
             }
             excerpt(pruneLength: 200)
           }
@@ -75,17 +93,26 @@ const Blog = () => {
       <PageTransition>
         <BlogWrap>
           <Container>
-            <Heading heading1>Blog</Heading>
-            <ul>
-              {data.allMarkdownRemark.edges.map((item) => (
-                <li key={item.node.id}>
-                  <Link to={`${item.node.frontmatter.slug}`}>
-                    <h2>{item.node.frontmatter.title} <span>{item.node.frontmatter.date}</span></h2>
-                    <p>{item.node.excerpt}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Row>
+              <Col md={8}>
+                <ul>
+                  {data.allMarkdownRemark.edges.map((item) => (
+                    <li key={item.node.id}>
+                      <Heading heading1 as={'h2'}>
+                        <Link to={`${item.node.frontmatter.slug}`}>{item.node.frontmatter.title}</Link>
+                        <span>{item.node.frontmatter.date}</span>
+                      </Heading>
+                      <p>{item.node.excerpt}</p>
+                      <Link to={`${item.node.frontmatter.slug}`}>Read More</Link>
+                    </li>
+                  ))}
+                </ul>
+              </Col>
+              <Col md={4}>
+                <Heading heading2 as={'h3'}>Blog Posts</Heading>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam ipsa magni ex, ducimus a autem iure illo molestias voluptatibus dolorem pariatur, voluptates distinctio. Cumque odit ipsam, debitis minima rem adipisci aspernatur perspiciatis quaerat labore eius eum doloribus blanditiis dolorum, ut voluptatibus cum enim numquam, fuga facilis maiores! Culpa, eligendi id.</p>
+              </Col>
+            </Row>
           </Container>
         </BlogWrap>
       </PageTransition>

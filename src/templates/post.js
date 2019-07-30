@@ -17,20 +17,35 @@ const PostWrap = styled.section`
   position: relative;
   padding-top: ${vars.rems.f100};
   padding-bottom: ${vars.rems.f100};
+  ${Heading} {
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 40px;
+  }
 `;
 
 const PostHTML = styled.div`
   position: relative;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
   p {
     font-size: ${vars.rems.f18};
-    line-height: 2;
+    line-height: 2.3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     + h1,
     + h2,
     + h3,
     + h4,
     + h5,
     + h6 {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
 `;

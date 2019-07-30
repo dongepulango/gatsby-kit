@@ -1,6 +1,6 @@
 ---
 id: 1
-title: "Post Title 1"
+title: "Blog Post Title 1"
 slug: '/post-1'
 date: '2019-07-25'
 ---

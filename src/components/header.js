@@ -35,6 +35,7 @@ const Logo = styled.div`
     display: block;
     color: #fff;
     font-weight: bold;
+    line-height: 1;
     &:hover,
     &:focus,
     &:active {
@@ -103,7 +104,7 @@ const Header = () => {
 
   return (
     <HeaderWrap>
-      <Container>
+      <Container maxWidth="1920px">
         <Logo>
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </Logo>

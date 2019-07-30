@@ -49,3 +49,12 @@ PublishProfiles/
 
 ### Node Modules ###
 node_modules/
+
+### Build ###
+build/
+public/
+
+### Cache ###
+.cache
+.cache/
+cache/

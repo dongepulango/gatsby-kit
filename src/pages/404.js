@@ -24,7 +24,7 @@ const Error404 = () => {
       <PageTransition>
         <Error404Wrap>
           <Container>
-            <Heading heading1>NOT FOUND</Heading>
+            <Heading heading1>404 NOT FOUND</Heading>
             <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
           </Container>
         </Error404Wrap>

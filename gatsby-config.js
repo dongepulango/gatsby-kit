@@ -1,10 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Kit`,
+    title: `BB Gatsby Starter Kit`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
-  //pathPrefix: "/gatsby-kit", //remove in production
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -46,12 +45,6 @@ module.exports = {
       resolve: 'gatsby-plugin-page-transitions',
       options: {
         transitionTime: 300
-      }
-    },
-    {
-      resolve: `gatsby-source-dribbble`,
-      options: {
-        access_token: '603195765c835ff8e4aa55bc7033b3902411fcfb848837d18743cb93e4c8f848'
       }
     },
   ],

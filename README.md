@@ -8,7 +8,7 @@
   Gatsby's Starter Kit
 </h1>
 
-[Live Link](https://dongepulango.github.io/gatsby-kit/)
+[Live Link](https://gatsby-kit.netlify.com/)
 
 ## 🚀 Quick start
 

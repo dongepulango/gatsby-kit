@@ -10,7 +10,7 @@ const vars = {
     blue: '#188bf6',
     teal: '#17cfbc',
     pink: '#ff3e7f',
-    purple: '#876cff',
+    purple: 'rebeccapurple',
   },
   fonts: {
     fontSize: '1rem',

@@ -5,7 +5,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's Starter Kit
+  BB Gatsby's Starter Kit
 </h1>
 
 [Live Link](https://gatsby-kit.netlify.com/)

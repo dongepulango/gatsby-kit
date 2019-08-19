@@ -56,5 +56,16 @@ module.exports = {
         transitionTime: 300
       }
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            variants: [`400`, `500`, `700`]
+          },
+        ],
+      },
+    }
   ],
 }

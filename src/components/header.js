@@ -1,7 +1,6 @@
 import React from 'react';
 //gatsby
-import { useStaticQuery, graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import { rgba } from 'polished';

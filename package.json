@@ -24,6 +24,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-pose": "^4.0.8",
+    "react-pose-text": "^3.1.0",
+    "react-waypoint": "^9.0.2",
     "styled-bootstrap-grid": "^3.0.4",
     "styled-components": "^4.3.2"
   },

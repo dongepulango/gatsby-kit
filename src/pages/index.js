@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //gatsby
 import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
@@ -15,6 +15,8 @@ import Image from '../components/image';
 import Button from '../components/button';
 //grid
 import { Row, Col } from 'styled-bootstrap-grid';
+//posed
+import posed from 'react-pose';
 
 //styled
 const HomeWrap = styled.section`
@@ -26,9 +28,18 @@ const HomeHero = styled.div`
   padding-top: ${vars.rems.f150};
   padding-bottom: ${vars.rems.f150};
   border-bottom: 1px solid #f6edfa;
-  border-top: 1px solid #f6edfa;
-  background: #fcfaff;
+  background-color: #fcfaff;
+  overflow: hidden;
   text-align: center;
+  > span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${vars.colors.purple};
+  }
   .image-wrap {
     margin-bottom: 40px;
   }
@@ -49,7 +60,63 @@ const HomeContent = styled.div`
   padding-bottom: ${vars.rems.f100};
 `;
 
+//posed
+const PosedHeroBG = posed.span({
+  init: {
+    y: 0,
+  },
+  enter: {
+    y: '-100%',
+    delay: 200,
+    transition: {
+      duration: 700,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+});
+
+const PosedHeroLogo = posed.div({
+  init: {
+    opacity: 0,
+    y: -100,
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1000,
+      ease: [0.22, 1, 0.36, 1],
+    },
+    delay: 700,
+  }
+});
+
+const PosedHerotexts = posed.div({
+  init: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 1000,
+      ease: [0.22, 1, 0.36, 1],
+    },
+    delay: 800,
+  }
+});
+
 const Home = () => {
+
+  //state
+  const [state, setState] = useState(false);
+  
+  //toggle state
+  useEffect(() => {
+    setState(true);
+    return () => {
+      setState(false);
+    };
+  },[]);
 
   //graphql query
   const data = useStaticQuery(graphql`
@@ -86,12 +153,17 @@ const Home = () => {
       <PageTransition>
         <HomeWrap>
           <HomeHero>
+            <PosedHeroBG pose={state && 'enter'} /> 
             <Container>
-              <div className="image-wrap">
-                <Image fluid={data.Image2.childImageSharp.fluid} center />
-              </div>
-              <Heading heading1>{data.site.siteMetadata.title}</Heading>
-              <p>{data.site.siteMetadata.description}</p>
+              <PosedHeroLogo pose={state && 'enter'}>
+                <div className="image-wrap">
+                  <Image fluid={data.Image2.childImageSharp.fluid} center />
+                </div>
+              </PosedHeroLogo>
+              <PosedHerotexts pose={state && 'enter'}>
+                <Heading heading1>{data.site.siteMetadata.title}</Heading>
+                <p>{data.site.siteMetadata.description}</p>
+              </PosedHerotexts>
             </Container>
           </HomeHero>
           <HomeContent>

@@ -23,37 +23,6 @@ const HomeWrap = styled.section`
   position: relative;
 `;
 
-const HomeHero = styled.div`
-  position: relative;
-  padding-top: ${vars.rems.f150};
-  padding-bottom: ${vars.rems.f150};
-  border-bottom: 1px solid #f6edfa;
-  background-color: #fcfaff;
-  overflow: hidden;
-  text-align: center;
-  > span {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${vars.colors.purple};
-  }
-  .image-wrap {
-    margin-bottom: 40px;
-  }
-  ${Heading} {
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-
 const HomeContent = styled.div`
   position: relative;
   padding-top: ${vars.rems.f100};

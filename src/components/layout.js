@@ -15,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 //styled
+const LayoutWrap = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+//styled
 const Main = styled.main`
   position: relative;
   padding-top: ${vars.navHeight}px;
@@ -23,14 +29,14 @@ const Main = styled.main`
 
 const Layout = (props) => {
   return (
-    <React.Fragment>
+    <LayoutWrap>
       <GlobalStyle />
       <Header />
       <Main>
         {props.children}
       </Main>
       <Footer />
-    </React.Fragment>
+    </LayoutWrap>
   );
 };
 

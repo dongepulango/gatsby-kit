@@ -21,7 +21,7 @@
 2.  **Develop**
 
     ```sh
-    npm run develop
+    npm run start
     ```
 
 3.  **Build**

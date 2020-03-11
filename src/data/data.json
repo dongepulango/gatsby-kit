@@ -3,60 +3,60 @@
     "name": "Miyah Myles",
     "email": "miyah.myles@gmail.com",
     "position": "Senior Developer",
-    "photo": "../images/image-1.png"
+    "photo": "../assets/images/image-1.png"
   },
   {
     "name": "June Cha",
     "email": "june.cha@gmail.com",
     "position": "Executive Assistant",
-    "photo": "../images/image-2.png"
+    "photo": "../assets/images/image-2.png"
   },
   {
     "name": "Iida Niskanen",
     "email": "iida.niskanen@gmail.com",
     "position": "Graphic Designer",
-    "photo": "../images/image-3.png"
+    "photo": "../assets/images/image-3.png"
   },
   {
     "name": "Renee Sims",
     "email": "renee.sims@gmail.com",
     "position": "Office Assistant",
-    "photo": "../images/image-4.png"
+    "photo": "../assets/images/image-4.png"
   },
   {
     "name": "Jonathan Nu\u00f1ez",
     "email": "jonathan.nu\u00f1ez@gmail.com",
     "position": "Senior Developer",
-    "photo": "../images/image-5.png"
+    "photo": "../assets/images/image-5.png"
   },
   {
     "name": "Sasha Ho",
     "email": "sasha.ho@gmail.com",
     "position": "Office Assistant",
-    "photo": "../images/image-6.png"
+    "photo": "../assets/images/image-6.png"
   },
   {
     "name": "Abdullah Hadley",
     "email": "abdullah.hadley@gmail.com",
     "position": "Marketing",
-    "photo": "../images/image-7.png"
+    "photo": "../assets/images/image-7.png"
   },
   {
     "name": "Veeti Seppanen",
     "email": "veeti.seppanen@gmail.com",
     "position": "Human Resources",
-    "photo": "../images/image-8.png"
+    "photo": "../assets/images/image-8.png"
   },
   {
     "name": "Thomas Stock",
     "email": "thomas.stock@gmail.com",
     "position": "Senior Developer",
-    "photo": "../images/image-9.png"
+    "photo": "../assets/images/image-9.png"
   },
   {
     "name": "Bonnie Riley",
     "email": "bonnie.riley@gmail.com",
     "position": "Product Designer",
-    "photo": "../images/image-10.png"
+    "photo": "../assets/images/image-10.png"
   }
 ]

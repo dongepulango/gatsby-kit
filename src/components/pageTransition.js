@@ -21,7 +21,6 @@ const PageTransition = ({ children, location }) => {
           ease: 'easeInOut',
         }
       }}
-      exit={{ opacity: 0 }}
       >
       {children}
     </PageTransitionWrap>

@@ -1,9 +1,8 @@
 import React from 'react';
 //router
-import { useLocation } from "@reach/router";
+import { useLocation } from '@reach/router';
 //style
 import styled, { createGlobalStyle } from 'styled-components';
-import vars from './varss';
 import reset from './reset';
 import typography from './typography';
 //page transition
@@ -29,7 +28,6 @@ const LayoutWrap = styled.div`
 //styled
 const Main = styled.main`
   position: relative;
-  padding-top: ${vars.navHeight}px;
   min-height: 100vh;
 `;
 

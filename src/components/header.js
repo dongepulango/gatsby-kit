@@ -7,6 +7,8 @@ import { rgba } from 'polished';
 import vars from './varss';
 //components
 import Container from './container';
+//headeroom
+import Headroom from 'react-headroom';
 
 //styled
 const HeaderWrap = styled.header`
@@ -14,11 +16,7 @@ const HeaderWrap = styled.header`
   align-items: center;
   background-color: rebeccapurple;
   height: ${vars.navHeight}px;
-  position: fixed;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 9;
   ${Container} {
     display: flex;
@@ -102,21 +100,23 @@ const Header = () => {
   `);
 
   return (
-    <HeaderWrap>
-      <Container maxWidth="1920px">
-        <Logo>
-          <Link to="/">{data.site.siteMetadata.title}</Link>
-        </Logo>
-        <NavLinks>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-        </NavLinks>
-      </Container>
-    </HeaderWrap>
+    <Headroom>
+      <HeaderWrap>
+        <Container maxWidth="1920px">
+          <Logo>
+            <Link to="/">{data.site.siteMetadata.title}</Link>
+          </Logo>
+          <NavLinks>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </NavLinks>
+        </Container>
+      </HeaderWrap>
+    </Headroom>
   );
 };
 

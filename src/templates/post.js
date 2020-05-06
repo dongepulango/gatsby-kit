@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import vars from '../components/varss';
-//page transition
-import PageTransition from 'gatsby-plugin-page-transitions';
 //components
 import SEO from '../components/seo';
 import Layout from '../components/layout';
@@ -55,21 +53,19 @@ const Post = (props) => {
   return (
     <Layout>
       <SEO title="Post" />
-      <PageTransition>
-        <PostWrap>
-          <Container>
-            <Row>
-              <Col md={8}>
-                <Heading heading1>{props.data.markdownRemark.frontmatter.title}</Heading>
-                <PostHTML dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
-              </Col>
-              <Col md={4}>
-                <Archive />
-              </Col>
-            </Row>
-          </Container>
-        </PostWrap>
-      </PageTransition>
+      <PostWrap>
+        <Container>
+          <Row>
+            <Col md={8}>
+              <Heading heading1>{props.data.markdownRemark.frontmatter.title}</Heading>
+              <PostHTML dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
+            </Col>
+            <Col md={4}>
+              <Archive />
+            </Col>
+          </Row>
+        </Container>
+      </PostWrap>
     </Layout>
   );
 };

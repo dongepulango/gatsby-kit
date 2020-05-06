@@ -4,8 +4,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import vars from '../components/varss';
-//page transition
-import PageTransition from 'gatsby-plugin-page-transitions';
 //components
 import SEO from '../components/seo';
 import Layout from '../components/layout';
@@ -86,31 +84,29 @@ const Blog = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <PageTransition>
-        <BlogWrap>
-          <Container>
-            <Row>
-              <Col md={8}>
-                <BlogList>
-                  {data.allMarkdownRemark.edges.map((item) => (
-                    <li key={item.node.id}>
-                      <Heading heading1 as={'h2'}>
-                        <Link to={`${item.node.frontmatter.slug}`}>{item.node.frontmatter.title}</Link>
-                        <span>{item.node.frontmatter.date}</span>
-                      </Heading>
-                      <p>{item.node.excerpt}</p>
-                      <Link to={`${item.node.frontmatter.slug}`}>Read More</Link>
-                    </li>
-                  ))}
-                </BlogList>
-              </Col>
-              <Col md={4}>
-                <Archive />
-              </Col>
-            </Row>
-          </Container>
-        </BlogWrap>
-      </PageTransition>
+      <BlogWrap>
+        <Container>
+          <Row>
+            <Col md={8}>
+              <BlogList>
+                {data.allMarkdownRemark.edges.map((item) => (
+                  <li key={item.node.id}>
+                    <Heading heading1 as={'h2'}>
+                      <Link to={`${item.node.frontmatter.slug}`}>{item.node.frontmatter.title}</Link>
+                      <span>{item.node.frontmatter.date}</span>
+                    </Heading>
+                    <p>{item.node.excerpt}</p>
+                    <Link to={`${item.node.frontmatter.slug}`}>Read More</Link>
+                  </li>
+                ))}
+              </BlogList>
+            </Col>
+            <Col md={4}>
+              <Archive />
+            </Col>
+          </Row>
+        </Container>
+      </BlogWrap>
     </Layout>
   );
 };

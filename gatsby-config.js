@@ -51,12 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 300
-      }
-    },
-    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [

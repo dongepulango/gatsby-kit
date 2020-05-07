@@ -4,9 +4,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import vars from './varss';
+import vars from 'components/styles/varss';
 //components
-import Container from './container';
+import Container from 'components/ui/container';
 //headeroom
 import Headroom from 'react-headroom';
 
@@ -15,9 +15,13 @@ const HeaderWrap = styled.header`
   display: flex;
   align-items: center;
   background-color: rebeccapurple;
-  height: ${vars.navHeight}px;
+  height: ${vars.headerHeight}px;
   position: relative;
   z-index: 9;
+  transition: ${vars.transitions.hover1};
+  @media (max-width: ${vars.media.smMax}) {
+    height: ${vars.headerHeightSm}px;
+  }
   ${Container} {
     display: flex;
     align-items: center;

@@ -1,7 +1,7 @@
 //styles
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
-import vars from './varss';
+import vars from 'components/styles/varss';
 
 //styled
 const Button = styled.button`

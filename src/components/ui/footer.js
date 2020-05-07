@@ -1,9 +1,9 @@
 import React from 'react';
 //styles
 import styled from 'styled-components';
-import vars from './varss';
+import vars from 'components/styles/varss';
 //components
-import Container from './container';
+import Container from 'components/ui/container';
 
 //styled
 const FooterWrap = styled.footer`

@@ -3,13 +3,13 @@ import React from 'react';
 import { useLocation } from '@reach/router';
 //style
 import styled, { createGlobalStyle } from 'styled-components';
-import reset from './reset';
-import typography from './typography';
+import reset from 'components/styles/reset';
+import typography from 'components/styles/typography';
 //page transition
-import PageTransition from './pageTransition';
+import PageTransition from 'components/ui/pageTransition';
 //components
-import Header from "./header";
-import Footer from "./footer";
+import Header from "components/ui/header";
+import Footer from "components/ui/footer";
 //framer-motion
 import { AnimatePresence } from 'framer-motion';
 

@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 //components
-import Heading from '../components/heading';
+import Heading from 'components/ui/heading';
 
 //styled
 const ArchiveWrap = styled.section`

@@ -1,7 +1,7 @@
 //styles
 import styled, { css } from 'styled-components';
 import { between } from 'polished';
-import vars from './varss';
+import vars from 'components/styles/varss';
 
 //styled
 const Heading = styled.h1`

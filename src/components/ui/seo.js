@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+const SEO = ({ description, lang, meta, title }) => {
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -16,9 +17,9 @@ function SEO({ description, lang, meta, title }) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet

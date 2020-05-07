@@ -1,12 +1,12 @@
 import React from 'react';
 //styles
 import styled from 'styled-components';
-import vars from '../components/varss';
+import vars from 'components/styles/varss';
 //components
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import Container from '../components/container';
-import Heading from '../components/heading';
+import SEO from 'components/ui/seo';
+import Layout from 'components/ui/layout';
+import Container from 'components/ui/container';
+import Heading from 'components/ui/heading';
 
 //styled
 const ContactWrap = styled.section`

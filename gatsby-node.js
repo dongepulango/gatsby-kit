@@ -1,14 +1,21 @@
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+const path = require(`path`);
+
+exports.onCreateWebpackConfig = ({ getConfig, stage, actions }) => {
   const config = getConfig();
   if (stage.startsWith("develop") && config.resolve) {
     config.resolve.alias = {
       ...config.resolve.alias,
       "react-dom": "@hot-loader/react-dom"
     };
-  }
+  };
+  //absolute import
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+  });
 };
 //////////////////////////////////////////////////////
-const path = require(`path`);
 
 exports.createPages = ({graphql, actions}) => {
 

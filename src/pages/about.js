@@ -3,13 +3,13 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
-import vars from '../components/varss';
+import vars from 'components/styles/varss';
 //components
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import Container from '../components/container';
-import Heading from '../components/heading';
-import Image from '../components/image';
+import SEO from 'components/ui/seo';
+import Layout from 'components/ui/layout';
+import Container from 'components/ui/container';
+import Heading from 'components/ui/heading';
+import Image from 'components/ui/image';
 //grid
 import { Row, Col } from 'styled-bootstrap-grid';
 
@@ -65,7 +65,7 @@ const About = () => {
   //graphql query
   const data = useStaticQuery(graphql`
     query {
-      allDataJson(limit: 8)  {
+      allDataJson(limit: 8) {
         edges {
           node {
             id

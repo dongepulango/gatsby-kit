@@ -3,13 +3,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
-import vars from '../components/varss';
+import vars from 'components/styles/varss';
 //components
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import Container from '../components/container';
-import Heading from '../components/heading';
-import Archive from '../components/archive';
+import SEO from 'components/ui/seo.js';
+import Layout from 'components/ui/layout.js';
+import Container from 'components/ui/container.js';
+import Heading from 'components/ui/heading.js';
+import Archive from 'components/blog/archive.js';
 //grid
 import { Row, Col } from 'styled-bootstrap-grid';
 

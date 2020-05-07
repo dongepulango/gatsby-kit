@@ -4,8 +4,9 @@ import { graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
 import vars from 'components/styles/varss';
+//seo
+import SEO from 'components/utils/seo';
 //components
-import SEO from 'components/ui/seo.js';
 import Layout from 'components/ui/layout.js';
 import Container from 'components/ui/container.js';
 import Heading from 'components/ui/heading.js';

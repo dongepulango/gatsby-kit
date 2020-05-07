@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 //gatsby
 import { Link, useStaticQuery, graphql } from 'gatsby';
+//context
+import { GlobalContext } from 'components/utils/context';
 //styles
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import vars from 'components/styles/varss';
 //components
@@ -27,6 +29,10 @@ const HeaderWrap = styled.header`
     align-items: center;
     justify-content: space-between;
   }
+  /* scrolled */
+  ${props => props.scrolled && css`
+    height: ${vars.headerHeightSm}px;
+  `}
 `;
 
 const Logo = styled.div`
@@ -103,9 +109,45 @@ const Header = () => {
     }
   `);
 
+  //use Context
+  const [context, setContext] = useContext(GlobalContext);
+
+  let browserWindow = {}
+  if (typeof window !== 'undefined') {
+    browserWindow = window;
+  }
+
+  //set header scrolled
+  const setHeaderScrolled = (state) => {
+    setContext({
+      ...context,
+      headerScrolled: state,
+    });
+  };
+
+  //scroll Y ref
+  const prevScrollY = useRef(0);
+
+  //scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = browserWindow.scrollY;
+      if (currentScrollY > vars.headerHeight) {
+        setHeaderScrolled(true);
+      } else {
+        setHeaderScrolled(false);
+      }
+      prevScrollY.current = currentScrollY;
+    };
+    browserWindow.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      browserWindow.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <Headroom>
-      <HeaderWrap>
+      <HeaderWrap scrolled={context.headerScrolled}>
         <Container maxWidth="1920px">
           <Logo>
             <Link to="/">{data.site.siteMetadata.title}</Link>

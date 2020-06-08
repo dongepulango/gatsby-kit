@@ -2,7 +2,7 @@ import React, { useContext, useRef, useEffect } from 'react';
 //gatsby
 import { Link, useStaticQuery, graphql } from 'gatsby';
 //context
-import { GlobalContext } from 'components/utils/context';
+import { GlobalContext } from 'context/';
 //styles
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';

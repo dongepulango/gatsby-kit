@@ -1,6 +1,6 @@
 import React from "react";
 //context
-import Context from 'components/utils/context';
+import Context from 'context/';
 
 const wrapRootElement = ({ element }) => {
   return (

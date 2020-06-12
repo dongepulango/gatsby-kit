@@ -3,7 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
-import vars from 'components/styles/varss';
+import { rem } from 'polished';
 //seo
 import SEO from 'components/utils/seo';
 //components
@@ -17,8 +17,8 @@ import { Row, Col } from 'styled-bootstrap-grid';
 //styled
 const AboutWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f100};
-  padding-bottom: ${vars.rems.f100};
+  padding-top: ${rem('100px')};
+  padding-bottom: ${rem('100px')};
   ${Heading} {
     text-align: center;
     margin-bottom: 60px;
@@ -51,11 +51,11 @@ const AboutPeople = styled.ul`
     }
     h3 {
       margin-bottom: 0;
-      font-size: ${vars.rems.f18};
+      font-size: ${rem('18px')};
       font-weight: 500;
     }
     p {
-      font-size: ${vars.rems.f14};
+      font-size: ${rem('14px')};
       opacity: 0.7;
     }
   }

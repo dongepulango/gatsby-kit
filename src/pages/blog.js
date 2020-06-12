@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
+import { rem } from 'polished';
 import vars from 'components/styles/varss';
 //seo
 import SEO from 'components/utils/seo';
@@ -18,8 +19,8 @@ import { Row, Col } from 'styled-bootstrap-grid';
 //styled
 const BlogWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f100};
-  padding-bottom: ${vars.rems.f100};
+  padding-top: ${rem('100px')};
+  padding-bottom: ${rem('100px')};
 `;
 
 const BlogList = styled.ul`
@@ -45,12 +46,12 @@ const BlogList = styled.ul`
         display: block;
         color: ${vars.colors.textLight};
         font-weight: normal;
-        font-size: ${vars.rems.f16};
+        font-size: ${rem('16px')};
         line-height: 2;
       }
     }
     p {
-      font-size: ${vars.rems.f18};
+      font-size: ${rem('18px')};
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
     > a {

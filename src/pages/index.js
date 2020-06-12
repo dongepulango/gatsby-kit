@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
-import vars from 'components/styles/varss';
+import { rem } from 'polished';
 //seo
 import SEO from 'components/utils/seo';
 //components
@@ -22,8 +22,8 @@ const HomeWrap = styled.section`
 
 const HomeHero = styled.div`
   position: relative;
-  padding-top: ${vars.rems.f150};
-  padding-bottom: ${vars.rems.f150};
+  padding-top: ${rem('150px')};
+  padding-bottom: ${rem('150px')};
   border-bottom: 1px solid #f6edfa;
   border-top: 1px solid #f6edfa;
   background: #fcfaff;
@@ -44,8 +44,8 @@ const HomeHero = styled.div`
 
 const HomeContent = styled.div`
   position: relative;
-  padding-top: ${vars.rems.f100};
-  padding-bottom: ${vars.rems.f100};
+  padding-top: ${rem('100px')};
+  padding-bottom: ${rem('100px')};
 `;
 
 const Home = () => {

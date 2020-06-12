@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 //styles
 import styled from 'styled-components';
-import vars from 'components/styles/varss';
+import { rem } from 'polished';
 //seo
 import SEO from 'components/utils/seo';
 //components
@@ -17,8 +17,8 @@ import { Row, Col } from 'styled-bootstrap-grid';
 //styled
 const PostWrap = styled.section`
   position: relative;
-  padding-top: ${vars.rems.f100};
-  padding-bottom: ${vars.rems.f100};
+  padding-top: ${rem('100px')};
+  padding-bottom: ${rem('100px')};
   ${Heading} {
     margin-bottom: 40px;
     font-weight: bold;
@@ -36,7 +36,7 @@ const PostHTML = styled.div`
     font-weight: bold;
   }
   p {
-    font-size: ${vars.rems.f18};
+    font-size: ${rem('18px')};
     line-height: 2.3;
     font-family: Georgia, 'Times New Roman', Times, serif;
     + h1,

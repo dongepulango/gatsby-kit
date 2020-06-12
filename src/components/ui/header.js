@@ -5,7 +5,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GlobalContext } from 'context/';
 //styles
 import styled, { css } from 'styled-components';
-import { rgba } from 'polished';
+import { rgba, rem } from 'polished';
 import vars from 'components/styles/varss';
 //components
 import Container from 'components/ui/container';
@@ -38,7 +38,7 @@ const HeaderWrap = styled.header`
 const Logo = styled.div`
   position: relative;
   a {
-    font-size: ${vars.rems.f24};
+    font-size: ${rem('24px')};
     display: block;
     color: #fff;
     font-weight: bold;

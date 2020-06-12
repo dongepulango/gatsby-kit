@@ -1,6 +1,7 @@
 import React from 'react';
 //styles
 import styled from 'styled-components';
+import { rem } from 'polished';
 import vars from 'components/styles/varss';
 //components
 import Container from 'components/ui/container';
@@ -9,11 +10,11 @@ import Container from 'components/ui/container';
 const FooterWrap = styled.footer`
   position: relative;
   border-top: 1px solid #f6edfa;
-  padding-top: ${vars.rems.f30};
-  padding-bottom: ${vars.rems.f30};
+  padding-top: ${rem('30px')};
+  padding-bottom: ${rem('30px')};
   text-align: center;
   color: ${vars.colors.textLight};
-  font-size: ${vars.rems.f14};
+  font-size: ${rem('14px')};
 `;
 
 const Footer = (props) => {

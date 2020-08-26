@@ -71,6 +71,7 @@ const MobileNav = () => {
   //toggle mobile nav
   const closeMobileNav = () => {
     setContext({
+      ...context,
       mobileNav: false
     });
   };

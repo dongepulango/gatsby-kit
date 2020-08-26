@@ -96,6 +96,7 @@ const Nav = () => {
   //toggle mobile nav
   const setMobileNavToggle = () =>{
     setContext({
+      ...context,
       mobileNav: !context.mobileNav
     });
   };

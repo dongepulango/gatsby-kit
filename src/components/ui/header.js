@@ -5,10 +5,11 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GlobalContext } from 'context/';
 //styles
 import styled, { css } from 'styled-components';
-import { rgba, rem } from 'polished';
+import { rem } from 'polished';
 import vars from 'components/styles/varss';
 //components
 import Container from 'components/ui/container';
+import Nav from 'components/ui/nav';
 //headeroom
 import Headroom from 'react-headroom';
 
@@ -53,34 +54,6 @@ const Logo = styled.div`
     max-width: 60px;
     height: auto;
     margin-left: -10px;
-  }
-`;
-
-const NavLinks = styled.nav`
-  position: relative;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    margin-right: -10px;
-    li {
-      a {
-        display: block;
-        padding: 5px 10px;
-        color: ${rgba('#fff', 0.6)};
-        &:hover,
-        &:focus,
-        &:active {
-          color: #fff;
-        }
-        /* current page */
-        &[aria-current='page'] {
-          color: #fff;
-        }
-      }
-    }
   }
 `;
 
@@ -152,14 +125,7 @@ const Header = () => {
           <Logo>
             <Link to="/">{data.site.siteMetadata.title}</Link>
           </Logo>
-          <NavLinks>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </NavLinks>
+          <Nav/>
         </Container>
       </HeaderWrap>
     </Headroom>

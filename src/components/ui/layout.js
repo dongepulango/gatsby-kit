@@ -9,6 +9,7 @@ import typography from 'components/styles/typography';
 import PageTransition from 'components/ui/pageTransition';
 //components
 import Header from "components/ui/header";
+import MobileNav from "components/ui/mobileNav";
 import Footer from "components/ui/footer";
 //framer-motion
 import { AnimatePresence } from 'framer-motion';
@@ -40,6 +41,7 @@ const Layout = ({ children }) => {
     <LayoutWrap>
       <GlobalStyle />
       <Header />
+      <MobileNav />
       <Main>
         <AnimatePresence exitBeforeEnter>
           <PageTransition location={location.pathname}>

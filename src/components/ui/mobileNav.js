@@ -14,13 +14,14 @@ import { useWindowSize } from 'components/hooks/useWindowSize';
 const MobileNavWrap = styled.nav`
   position: fixed;
   margin: auto;
-  top: ${vars.headerHeightSm - 1}px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 99;
   opacity: 0;
   pointer-events: none;
+  padding-top: ${vars.headerHeightSm}px;
   transition: ${vars.transitions.hover1};
   will-change: opacity;
   background-color: ${rgba('#fff', 0.95)};

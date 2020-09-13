@@ -20,7 +20,7 @@ const HeaderWrap = styled.header`
   background-color: rebeccapurple;
   height: ${vars.headerHeight}px;
   position: relative;
-  z-index: 9;
+  z-index: 99;
   transition: ${vars.transitions.hover1};
   @media (max-width: ${vars.media.smMax}) {
     height: ${vars.headerHeightSm}px;
@@ -88,7 +88,7 @@ const Header = () => {
   let browserWindow = {}
   if (typeof window !== 'undefined') {
     browserWindow = window;
-  }
+  };
 
   //set header scrolled
   const setHeaderScrolled = (state) => {
@@ -119,7 +119,7 @@ const Header = () => {
   });
 
   return (
-    <Headroom>
+    <Headroom style={{zIndex: 999}}>
       <HeaderWrap scrolled={context.headerScrolled}>
         <Container maxWidth="1920px">
           <Logo>

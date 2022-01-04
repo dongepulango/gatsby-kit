@@ -20,7 +20,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `@rhysforyou/gatsby-plugin-react-helmet-async`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     {
@@ -50,16 +50,5 @@ module.exports = {
         displayName: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `500`, `700`]
-          },
-        ],
-      },
-    }
   ],
 }
